@@ -49,7 +49,7 @@ void ofApp::draw() {
 void ofApp::draw_character_sphere(ofPoint point, string word, int radius) {
 
 	ofPoint word_size = ofPoint(this->font.stringWidth(word), this->font.stringHeight(word));
-	word_paths = this->font.getStringAsPoints(word);
+	vector<ofTTFCharacter> word_paths = this->font.getStringAsPoints(word);
 	ofPoint start, end;
 
 	ofPushMatrix();
@@ -69,7 +69,9 @@ void ofApp::draw_character_sphere(ofPoint point, string word, int radius) {
 		ofRotateX(deg_param);
 	}
 
-	for (int w_index = 0; w_index < this->word_paths.size(); w_index++) {
+	 
+
+	for (int w_index = 0; w_index < word_paths.size(); w_index++) {
 
 		vector<ofPolyline> outline = word_paths[w_index].getOutline();
 		ofVec3f center = outline[0].getCentroid2D();

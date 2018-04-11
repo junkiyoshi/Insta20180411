@@ -22,7 +22,6 @@ public:
 	// Make Member
 	ofEasyCam cam;
 	ofxTrueTypeFontUC font;
-	vector<ofTTFCharacter> word_paths;
 	
 	// Make Method
 	void draw_character_sphere(ofPoint point, string word, int radius);
